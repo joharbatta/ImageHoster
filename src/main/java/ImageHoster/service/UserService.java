@@ -1,0 +1,21 @@
+package ImageHoster.service;
+import ImageHoster.model.User;
+
+public class UserService {
+
+    //We are not currently storing the details of the user anywhere
+    //We will be storing the user details in the Database & ORMs part
+    public void registerUser(User newUser)
+    {
+        return;
+    }
+
+    //Since we do not have any user in the database, therefore the user with username 'upgrad' and password 'password' is hard-coded
+    //This method returns true if the username is 'upgrad' and password is 'password'
+    public boolean login(User user) {
+        if (user.getUsername().equals("upgrad") && user.getPassword().equals("password"))
+            return true;
+        else
+            return false;
+    }
+}

@@ -1,6 +1,5 @@
 package ImageHoster.controller;
 
-
 import ImageHoster.model.Image;
 import ImageHoster.service.ImageService;
 import org.springframework.beans.factory.annotation.Autowired;
