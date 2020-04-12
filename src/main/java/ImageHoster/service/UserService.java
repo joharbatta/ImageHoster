@@ -15,7 +15,6 @@ public class UserService {
         userRepository.registerUser(newUser);
     }
 
-
     public User login(User user) {
 
         User existingUser = userRepository.checkUser(user.getUsername(), user.getPassword());
