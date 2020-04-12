@@ -16,6 +16,13 @@ public class Image {
         this.imageFile = imageFile;
         this.date = date;
     }
+    public Image(Integer id, String title, String imageFile, String description, Date date) {
+        this.id = id;
+        this.title = title;
+        this.imageFile = imageFile;
+        this.description = description;
+        this.date = date;
+    }
 
     public Integer getId() {
         return id;
