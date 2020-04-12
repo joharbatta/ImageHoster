@@ -1,9 +1,11 @@
 <!Doctype html>
 
 <html xmlns:th="http://thymeleaf.org">
-<head>
-    <title>Spring MVC Application - Image Hoster</title>
+
+<head th:replace="layout :: site-head">
 </head>
+
+<header th:replace="layout :: logged-out"></header>
 <body>
 <h1>Image Hoster</h1>
 <main id="imageblock">

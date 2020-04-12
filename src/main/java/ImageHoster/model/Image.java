@@ -23,6 +23,8 @@ public class Image {
         this.description = description;
         this.date = date;
     }
+    public Image() {
+    }
 
     public Integer getId() {
         return id;

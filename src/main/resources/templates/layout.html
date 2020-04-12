@@ -8,7 +8,14 @@
 <body>
 <header th:fragment="logged-out" th:remove="tag">
     <header>
+        <a href="users/login.html" th:href="@{/users/login}">Login</a>
         <a href="users/registration.html" th:href="@{/users/registration}">Registration</a>
+    </header>
+</header>
+
+<header th:fragment="logged-in" th:remove="tag">
+    <header>
+        <a href="images/upload.html" th:href="@{/images/upload}">Upload Image</a>
     </header>
 </header>
 </body>
