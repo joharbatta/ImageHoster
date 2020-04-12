@@ -4,13 +4,13 @@
             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
              version="2.1">
 
-    <persistence-unit name="techblog">
+    <persistence-unit name="imagehoster">
 
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
-            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/technicalblog" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/imagehoster" />
             <property name="javax.persistence.jdbc.user" value="postgres" />
             <property name="javax.persistence.jdbc.password" value="admin" />
             <property name="hibernate.hbm2ddl.auto" value="update" />

@@ -7,6 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import javax.servlet.http.HttpSession;
+
 @Controller
 public class UserController {
 
@@ -14,7 +17,6 @@ public class UserController {
     private UserService userService;
     @RequestMapping("users/registration")
     public String registration(Model model) {
-
         User user = new User();
         UserProfile profile = new UserProfile();
         user.setProfile(profile);
@@ -22,10 +24,8 @@ public class UserController {
         return "users/registration";
     }
 
-
     @RequestMapping(value = "users/registration", method = RequestMethod.POST)
     public String registerUser(User user) {
-
         userService.registerUser(user);
         return "redirect:/users/login";
     }
@@ -35,13 +35,13 @@ public class UserController {
         return "users/login";
     }
 
-    @RequestMapping(value = "users/login", method= RequestMethod.POST)
-    public String loginUser(User user) {
-        boolean userExists = userService.login(user);
-        if(userExists) {
+    @RequestMapping(value = "users/login", method = RequestMethod.POST)
+    public String loginUser(User user, HttpSession session) {
+        User existingUser = userService.login(user);
+        if (existingUser != null) {
+            session.setAttribute("loggeduser", existingUser);
             return "redirect:/images";
-        }
-        else {
+        } else {
             return "users/login";
         }
     }
